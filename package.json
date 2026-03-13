@@ -1,0 +1,15 @@
+{
+  "name": "next-query-loop-link-target",
+  "version": "1.0.0",
+  "description": "Extends the Query Loop block with a link target control.",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "lint:js": "wp-scripts lint-js",
+    "zip": "cd .. && zip -r \"NExT-Query-Loop-Link-Target/next-query-loop-link-target.zip\" \"NExT-Query-Loop-Link-Target\" -x \"*/node_modules/*\" -x \"*/src/*\" -x \"*/package.json\" -x \"*/package-lock.json\" -x \"*/.gitignore\" -x \"*.zip\"",
+    "build:zip": "npm run build && npm run zip"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.0.0"
+  }
+}
