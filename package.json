@@ -7,9 +7,20 @@
     "start": "wp-scripts start",
     "lint:js": "wp-scripts lint-js",
     "zip": "cd .. && zip -r \"NExT-Query-Loop-Link-Target/next-query-loop-link-target.zip\" \"NExT-Query-Loop-Link-Target\" -x \"*/node_modules/*\" -x \"*/src/*\" -x \"*/package.json\" -x \"*/package-lock.json\" -x \"*/.gitignore\" -x \"*.zip\"",
-    "build:zip": "npm run build && npm run zip"
+    "build:zip": "npm run build && npm run zip",
+    "test:e2e": "npx playwright test",
+    "test:e2e:ui": "npx playwright test --ui",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.php": "composer run phpcs --"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^30.0.0"
+    "@playwright/test": "^1.60.0",
+    "@wordpress/e2e-test-utils-playwright": "^1.47.0",
+    "@wordpress/env": "^10.39.0",
+    "@wordpress/scripts": "^30.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0"
   }
 }
