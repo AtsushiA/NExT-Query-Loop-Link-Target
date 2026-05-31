@@ -8,17 +8,16 @@ namespace NExT\QueryLoopLinkTarget\Tests\Integration;
 use WP_UnitTestCase;
 
 /**
- * Tests for basic plugin activation.
+ * Tests for basic plugin loading.
  */
 class PluginActiveTest extends WP_UnitTestCase {
 
 	/**
-	 * プラグインが有効化されている.
+	 * プラグインのメイン関数が定義されている（bootstrap でロード済み）.
 	 */
-	public function test_plugin_is_active(): void {
-		$this->assertTrue(
-			is_plugin_active( 'NExT-Query-Loop-Link-Target/nqllt.php' )
-		);
+	public function test_plugin_functions_are_defined(): void {
+		$this->assertTrue( function_exists( 'nqllt_register_scripts' ) );
+		$this->assertTrue( function_exists( 'nqllt_render_query_block' ) );
 	}
 
 	/**
