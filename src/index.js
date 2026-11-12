@@ -5,7 +5,7 @@ import { createHigherOrderComponent } from '@wordpress/compose';
 import { __ } from '@wordpress/i18n';
 import { Fragment } from '@wordpress/element';
 
-const BLOCK_NAME    = 'core/query';
+const BLOCK_NAME = 'core/query';
 const ATTRIBUTE_KEY = 'nqlltOpenInNewTab';
 
 /**
@@ -53,8 +53,14 @@ const withOpenInNewTabControl = createHigherOrderComponent( ( BlockEdit ) => {
 							label={ __( '新しいタブでリンクを開く', 'nqllt' ) }
 							help={
 								isChecked
-									? __( 'リンクは新しいタブ（target="_blank"）で開きます。', 'nqllt' )
-									: __( 'リンクは同じタブで開きます。', 'nqllt' )
+									? __(
+											'リンクは新しいタブ（target="_blank"）で開きます。',
+											'nqllt'
+									  )
+									: __(
+											'リンクは同じタブで開きます。',
+											'nqllt'
+									  )
 							}
 							checked={ isChecked }
 							onChange={ ( value ) =>
